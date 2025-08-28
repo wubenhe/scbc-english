@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SCBC Church Website Design System 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 57%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 210 100% 45%;
+
+    /* Church-specific design tokens */
+    --church-blue: 210 100% 45%;
+    --church-blue-light: 195 100% 50%;
+    --church-blue-dark: 215 100% 35%;
+    --church-navy: 215 25% 27%;
+    --church-gold: 45 100% 60%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--church-blue)) 0%, hsl(var(--church-blue-light)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 12px hsl(var(--church-blue) / 0.1);
+    --shadow-medium: 0 8px 32px hsl(var(--church-blue) / 0.15);
+    --shadow-strong: 0 16px 48px hsl(var(--church-blue) / 0.2);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 13%;
+    --foreground: 0 0% 98%;
+
+    --card: 215 25% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 215 25% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 195 100% 60%;
+    --primary-foreground: 215 25% 13%;
+
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 215 25% 20%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 210 100% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 195 100% 60%;
+
+    /* Dark mode church colors */
+    --church-blue: 195 100% 60%;
+    --church-blue-light: 210 100% 65%;
+    --church-blue-dark: 215 100% 45%;
+    --church-navy: 0 0% 98%;
+    --church-gold: 45 100% 65%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(var(--church-blue)) 0%, hsl(var(--church-blue-light)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    
+    --shadow-soft: 0 4px 12px hsl(0 0% 0% / 0.3);
+    --shadow-medium: 0 8px 32px hsl(0 0% 0% / 0.4);
+    --shadow-strong: 0 16px 48px hsl(0 0% 0% / 0.5);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    color: hsl(var(--church-navy));
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+}
